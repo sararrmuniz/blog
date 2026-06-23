@@ -9,6 +9,7 @@
   "editor.lineNumbers": "off",
   "files.eol": "\n", // Final de linha sempre será LF
   "explorer.compactFolders": false,
+  "editor.minimap.enabled": false,
 
   // 🛠 Formatação e Lint
   "editor.defaultFormatter": "esbenp.prettier-vscode",
