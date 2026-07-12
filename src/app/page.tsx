@@ -2,12 +2,9 @@ import { Suspense } from 'react';
 import { PostsList } from '@/components/PostsList';
 import { postRepository } from '@/repositories/post';
 import { SpinLoader } from '@/components/SpinLoader';
-import clsx from 'clsx';
 // page.tsx (server) -> menu.tsx (server) -> link (client)
 
 export default async function HomePage() {
-
-  const post = await postRepository.findAll();
 
   return (
     <div>
