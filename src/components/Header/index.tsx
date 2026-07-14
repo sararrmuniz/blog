@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import Link from 'next/link';
 
 export function Header() {
   return (
@@ -9,7 +10,7 @@ export function Header() {
         'lg:text-7xl/normal lg:py-12',
       )}
     >
-      <a href="#"> Meu Blog</a>
+      <Link href="#"> Meu Blog</Link>
     </h1>
   );
 }
