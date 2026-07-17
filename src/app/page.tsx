@@ -5,6 +5,8 @@ import { Header } from '@/components/Header';
 import { Container } from '@/components/Container';
 import Link from 'next/link';
 import Image from 'next/image';
+import { PostHeading } from '@/components/PostHeading';
+
 // page.tsx (server) -> menu.tsx (server) -> link (client)
 
 export default async function HomePage() {
@@ -24,16 +26,16 @@ export default async function HomePage() {
           />
         </Link>
         <div className='flex flex-col justify-center'>
-
-          <time dateTime='2023-06-01' className='text-sm/tight text-slate-600 mb-4 block'>
+          <time
+            dateTime='2023-06-01'
+            className='text-sm/tight text-slate-600 mb-4 block'
+          >
             1 de junho de 2023 10:00
           </time>
 
-          <h1 className='text-2xl/tight font-extrabold mt-2 mb-4'>
-            <Link href='#'>
-              Título do Post
-            </Link>
-          </h1>
+          <PostHeading as='h2' url='#'>
+            Título do Post
+          </PostHeading>
 
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
