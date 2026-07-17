@@ -3,9 +3,8 @@ import { PostsList } from '@/components/PostsList';
 import { SpinLoader } from '@/components/SpinLoader';
 import { Header } from '@/components/Header';
 import { Container } from '@/components/Container';
-import Link from 'next/link';
-import Image from 'next/image';
 import { PostHeading } from '@/components/PostHeading';
+import { PostCoverImage } from '@/components/PostCoverImage';
 
 // page.tsx (server) -> menu.tsx (server) -> link (client)
 
@@ -15,16 +14,20 @@ export default async function HomePage() {
       <Header />
 
       <section className='grid grid-cols-1 gap-8 mb-16 sm:grid-cols-2 group'>
-        <Link href='#' className='w-full h-full overflow-hidden rounded-xl'>
-          <Image
-            className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out'
-            src='/images/bryen_0.png'
-            width={1200}
-            height={720}
-            alt='Imagem do Blog'
-            priority
-          />
-        </Link>
+
+        <PostCoverImage
+          linkProps={{
+            href: '/post/asdfasdf',
+          }}
+          imageProps={{
+            width: 1200,
+            height: 720,
+            src: '/images/bryen_9.png',
+            alt: 'Alt da imagem',
+            priority: true,
+          }}
+        />
+        
         <div className='flex flex-col justify-center'>
           <time
             dateTime='2023-06-01'
