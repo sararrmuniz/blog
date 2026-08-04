@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { findPostBySlugCached } from '@/lib/post/queries';
-import type { PostModel } from '@/models/post/post-model';
+import { PostModel } from '@/models/post/post-model';
 
 type PostSlugPageProps = {
   params: Promise<{
@@ -11,13 +11,7 @@ type PostSlugPageProps = {
 export default async function PostSlugPage({ params }: PostSlugPageProps) {
   const { slug } = await params;
 
-  let post: PostModel | null = null;
-
-  try {
-    post = await findPostBySlugCached(slug);
-  } catch {
-    post = null;
-  }
+  const post: PostModel | undefined = await findPostBySlugCached(slug);
 
   if (!post) {
     notFound();
